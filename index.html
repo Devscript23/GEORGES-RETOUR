@@ -101,12 +101,6 @@ small{color:#5a6078}
     <label><input type="radio" name="recommande" value="peut-etre"> Peut-être</label>
     <label><input type="radio" name="recommande" value="non"> Non</label>
   </div>
-  <label class="q">Georges coûte 10 € par an. Allez-vous continuer ?</label>
-  <div class="opts">
-    <label><input type="radio" name="paierait" value="oui"> Oui</label>
-    <label><input type="radio" name="paierait" value="peut-etre"> Peut-être</label>
-    <label><input type="radio" name="paierait" value="non"> Non</label>
-  </div>
   <label class="q" for="commentaire">Votre avis en quelques phrases</label>
   <textarea id="commentaire" name="commentaire" maxlength="2000" placeholder="Ce que vous diriez à une autre famille…"></textarea>
 </section>
@@ -145,7 +139,7 @@ f.addEventListener('submit',async e=>{
     fonctions:[...f.querySelectorAll('[name=fonctions]:checked')].map(x=>x.value),
     utile:f.utile.value.trim()||null,bloque:f.bloque.value.trim()||null,manque:f.manque.value.trim()||null,
     note_eleve:val('note_eleve')?+val('note_eleve'):null,note_parent:val('note_parent')?+val('note_parent'):null,
-    recommande:val('recommande'),paierait:val('paierait'),commentaire:f.commentaire.value.trim()||null,
+    recommande:val('recommande'),commentaire:f.commentaire.value.trim()||null,
     accord_donnees:true,accord_publication:document.getElementById('accord_publication').checked};
   go.disabled=true;go.textContent='Envoi…';
   try{
